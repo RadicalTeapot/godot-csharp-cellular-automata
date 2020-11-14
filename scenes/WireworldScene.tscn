@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/WireworldScene.cs" type="Script" id=1]
+
+[node name="Grid" type="Node2D"]
+script = ExtResource( 1 )
+UseDiagonalNeighbours = true
+Height = 50
+DrawGrid = true
+IsPlaying = false
