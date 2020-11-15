@@ -45,7 +45,11 @@ public class GameOfLifeScene : Grid
 
     public override void UpdateGrid(float delta)
     {
+#if GODOT_WEB || GODOT_HTML5
+        for (int i = 0; i < _count; i++)
+#else
         Parallel.For(0, _count, i =>
+#endif
         {
             int x = i % Width;
             int y = i / Width;
@@ -62,7 +66,11 @@ public class GameOfLifeScene : Grid
                 if (sum == 3)
                     _cells[i].nextType = CellType.ON;
             }
+#if GODOT_WEB || GODOT_HTML5
+        }
+#else
         });
+#endif
         for (int i = 0; i < _count; i++)
             _cells[i].type = _cells[i].nextType;
     }
