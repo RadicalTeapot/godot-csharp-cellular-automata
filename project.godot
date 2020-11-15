@@ -23,6 +23,10 @@ config/icon="res://assets/icon.png"
 
 Global="*res://scripts/Global.cs"
 
+[physics]
+
+common/physics_fps.HTML5=30
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
